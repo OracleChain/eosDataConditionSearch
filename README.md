@@ -17,8 +17,8 @@ There is a problem with the results
 `seq  when                              contract::action => receiver      trx id...   args
 ===========`
 
-## This program provides eos gettransactionbyid and getactions about transfer and transferfrom (contracts Must meet the erc20 standard or subset) functionality
-# 这个程序为eos提供gettransactionbyid和getactions(仅仅转账相关)功能,所查询合约操作，必须符合erc20标准或者子集
+## This program provides eos gettransactionbyid and getactions about transfer and transferfrom (contracts Must meet the eosio.token standard,for example eosdactoken of oraclechain) functionality
+# 这个程序为eos提供gettransactionbyid和getactions(仅仅转账相关)功能,所查询合约操作，必须符合eosio.token标准比如oraclechain的eosdactoken
 
 ### Install mongodb,create database eos with your username and password
 #### Should point to your local nodeos node, so that the speed will be much faster, you can keep up with the nodeos `block out speed
