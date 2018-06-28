@@ -11,10 +11,9 @@
   "traces": []
 }
 
-## cleos -u http://mainnet.genereos.io  get actions helloworldgo
-返回的操作也为空
+## cleos -u http://mainnet.genereos.io  get actions helloworldgo 返回的操作也为空
 `seq  when                              contract::action => receiver      trx id...   args
-================================================================================================================`
+===========`
 
 ## This program provides eos gettransactionbyid and getactions about transfer and transferfrom (contracts Must meet the erc20 standard or subset) functionality
 # 这个程序为eos提供gettransactionbyid和getactions(仅仅转账相关)功能,所查询合约操作，必须符合erc20标准或者子集
