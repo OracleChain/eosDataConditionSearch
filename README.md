@@ -1,10 +1,6 @@
-### EOS本身还没有支持get transaction by id,以及get actions操作(如下操作所示)，eosDataConditionSearch提前支持这两个功能的部分查询（转账相关actions查询）  
-
-### EOS itself does not support get transaction by id, and get actions operation (as shown below). eosDataConditionSearch supports partial query of these two functions in advance (transfer related actions query)  
-  
+## EOS itself does not support get transaction by id, and get actions operation (as shown below). eosDataConditionSearch supports partial query of these two functions in advance (transfer related actions query)  
 cleos -u http://mainnet.genereos.io  get transaction ec6887d35adfefc9d7443189d9802cdf3b9de24e065f887399827c7e3bf3ffdd
-返回结果有问题  
-There is a problem with the results  
+There is a problem with the results as below,block_time is "2000-..."
 {  
   "id": "ec6887d35adfefc9d7443189d9802cdf3b9de24e065f887399827c7e3bf3ffdd",  
   "trx": null,  
@@ -14,21 +10,24 @@ There is a problem with the results
   "traces": []  
 }  
   
-cleos -u http://mainnet.genereos.io  get actions helloworldgo 返回的操作也为空  
+cleos -u http://mainnet.genereos.io  get actions helloworldgo 
+but get nothing as beloww
 seq  when                              contract::action => receiver      trx id...   args  
 
-### This program provides eos gettransactionbyid and getactions about transfer and transferfrom (contracts Must meet the eosio.token standard,for example eosdactoken of oraclechain) functionality  
-这个程序为eos提供gettransactionbyid和getactions(仅仅转账相关)功能,所查询合约操作，必须符合eosio.token标准比如oraclechain的eosdactoken  
+## This program provides eos gettransactionbyid and getactions about transfer and transferfrom (contracts Must meet the eosio.token standard,for example eosdactoken of oraclechain) functionality  
 
 ### Install mongodb,create database eos with your username and password  
-Should point to your local nodeos node, so that the speed will be much faster, you can keep up with the nodeos block out speed  
 
+### open eosDataConditionSearch with Intellij, Then config java application file: application.properties  
+eos.url=youeosnode
+mongo.ip=
+mongo.port=27017
+mongo.username=
+mongo.password=
+mongo.database=eos
+...  
 
-
-### Then config application.properties  
-eos.url=  
-
-### Deploy,and then StartSyncBlock from latest block number，Before the bolck, you need to simply modify the program and start syncing from the first block  
+### compile with mavent, Deploy war package to tomcat,and then StartSyncBlock from latest block number，sync bolck before, you need to simply modify the program and start syncing from the first block  
 curl "http://127.0.0.1:8080/VX/StartSyncBlock"  
 
 ### Now,you can try GetTransactionById and GetActions  
