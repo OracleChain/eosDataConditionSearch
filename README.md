@@ -1,6 +1,7 @@
 ## EOS itself does not support get transaction by id, and get actions operation (as shown below). eosDataConditionSearch supports partial query of these two functions in advance (transfer related actions query)  
+eg.  
 cleos -u http://mainnet.genereos.io  get transaction ec6887d35adfefc9d7443189d9802cdf3b9de24e065f887399827c7e3bf3ffdd  
-There is a problem with the results as below,block_time is "2000-..."  
+*There is a problem with the results as below,block_time is "2000-..."*  
 {  
   "id": "ec6887d35adfefc9d7443189d9802cdf3b9de24e065f887399827c7e3bf3ffdd",  
   "trx": null,  
@@ -10,6 +11,7 @@ There is a problem with the results as below,block_time is "2000-..."
   "traces": []  
 }  
   
+eg.  
 cleos -u http://mainnet.genereos.io  get actions helloworldgo 
 but get nothing as beloww
 seq  when                              contract::action => receiver      trx id...   args  
