@@ -1,4 +1,4 @@
-# EOS本身还没有支持get transaction by id,以及get actions操作(如下操作所示)，eosDataConditionSearch提前支持这两个功能
+# EOS本身还没有支持get transaction by id,以及get actions操作(如下操作所示)，eosDataConditionSearch提前支持这两个功能的部分查询（转账相关actions查询）
 
 ## cleos -u http://mainnet.genereos.io  get transaction ec6887d35adfefc9d7443189d9802cdf3b9de24e065f887399827c7e3bf3ffdd
 返回结果有问题
